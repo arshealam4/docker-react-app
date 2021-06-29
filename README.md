@@ -16,21 +16,28 @@ To run this app docker angine and docker compsoe  should be installed.
 - open it on browser: localhost:3000
 
 ### Start Docker Prod
-- docker build build -t hello-word-prod .
+- docker build -f Dockerfile.prod -t hello-world:prod .
 - docker run -it -p 3005:3000 hello-word-prod
 - open it on browser: localhost:3005
 
-### start Docker Compose Dev
+### Start Docker Compose Dev
 - docker-compose up -d --build
 
-### start Docker Compose Prod
-- docker build -f Dockerfile.prod -t hello-world:prod .
+### Start Docker Compose Prod
+- docker-compose -f docker-compose.prod.yaml up -d --build
 
-### start/stop
+### Start/Stop/Other
 
+- docker build
+- docker run
 - docker start
 - docker stop
 - docker rm id
+- docker logs <cointainerId>
+- docker exec -it <cointainerId> sh
+- delete all container => docker container rm -f $(docker container ls -a -q)
+- delete all images => docker images rm -f $(docker images ls -a -q)
+- docker-compose build
 - docker-compose down
 - docker-compose up
 - docker-compose stop
