@@ -1,0 +1,1 @@
+1. If we want to change static path we need to add this property in package.json => "homepage": "."
